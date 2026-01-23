@@ -1,0 +1,163 @@
+:root {
+  --night-bg: #0b0f19;
+  --card-bg: rgba(21, 32, 51, 0.8);
+  --accent-gold: #d4af37;
+  --text-main: #ffffff;
+  --text-dim: #94a3b8;
+}
+
+body {
+  margin: 0;
+  background: var(--night-bg);
+  color: var(--text-main);
+  font-family: 'Segoe UI', Tahoma, sans-serif;
+  direction: rtl;
+  overflow-x: hidden;
+}
+
+/* خلفية النجوم */
+.stars-container {
+  position: fixed;
+  top: 0; left: 0; width: 100%; height: 100%;
+  z-index: -1;
+  background: radial-gradient(circle at center, #1b2735 0%, #090a0f 100%);
+}
+
+.star {
+  position: absolute;
+  background: white;
+  border-radius: 50%;
+  opacity: 0.5;
+  animation: twinkle var(--duration) infinite ease-in-out;
+}
+
+@keyframes twinkle {
+  0%, 100% { transform: scale(1); opacity: 0.3; }
+  50% { transform: scale(1.3); opacity: 1; }
+}
+
+/* الحاوية */
+.container {
+  width: 90%;
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 40px 0;
+}
+
+header {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.moon-icon {
+  font-size: 3.5rem;
+  color: var(--accent-gold);
+  filter: drop-shadow(0 0 10px rgba(212, 175, 55, 0.5));
+}
+
+.subtitle {
+  color: var(--accent-gold);
+  font-size: 0.9rem;
+  margin-bottom: 5px;
+}
+
+/* الشبكة الرئيسية */
+.main-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  gap: 25px;
+  justify-content: center;
+}
+
+/* كرت الإذاعات (عرض كامل) */
+.full-width {
+  grid-column: 1 / -1;
+}
+
+.card {
+  background: var(--card-bg);
+  backdrop-filter: blur(15px);
+  border-radius: 24px;
+  padding: 25px;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  box-shadow: 0 15px 35px rgba(0,0,0,0.4);
+  transition: transform 0.3s ease;
+}
+
+h2 {
+  font-size: 1.1rem;
+  color: var(--accent-gold);
+  border-bottom: 1px solid rgba(212, 175, 55, 0.2);
+  padding-bottom: 15px;
+  margin-bottom: 20px;
+  display: flex;
+  justify-content: space-between;
+}
+
+/* الإذاعات */
+.radio-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 15px;
+}
+
+.radio-item {
+  background: rgba(10, 15, 28, 0.6);
+  padding: 15px;
+  border-radius: 15px;
+  border: 1px solid rgba(255,255,255,0.03);
+}
+
+audio {
+  width: 100%;
+  height: 35px;
+  filter: invert(100%) brightness(1.5);
+}
+
+/* الفيديوهات: ضبط التناسق */
+.video-wrapper {
+  width: 100%;
+  max-width: 450px; /* يمنع التمدد الزائد في الشاشات الكبيرة */
+  margin: 0 auto;
+  aspect-ratio: 16 / 9;
+  background: #000;
+  border-radius: 18px;
+  overflow: hidden;
+  position: relative;
+}
+
+.video-placeholder {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  background: rgba(15, 23, 42, 0.8);
+}
+
+.video-placeholder:hover {
+  background: rgba(212, 175, 55, 0.05);
+}
+
+.play-icon {
+  font-size: 2.5rem;
+  color: var(--accent-gold);
+  margin-bottom: 10px;
+}
+
+iframe {
+  width: 100%; height: 100%; border: none;
+}
+
+@media (max-width: 768px) {
+  .main-grid { grid-template-columns: 1fr; }
+  .video-wrapper { max-width: 100%; }
+}
+
+footer {
+  text-align: center;
+  padding: 40px;
+  color: var(--text-dim);
+  font-size: 0.8rem;
+}
