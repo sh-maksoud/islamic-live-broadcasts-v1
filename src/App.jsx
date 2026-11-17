@@ -67,7 +67,13 @@ export default function App() {
             <h2><span>🕋 الحرم المكي</span> <small>DIRECT</small></h2>
             <div className="video-wrapper">
               {activeVideo === "makkah" ? (
-                <iframe src="https://www.youtube.com/embed/jYhpTcaoSi0?autoplay=1" allow="autoplay" allowFullScreen title="Makkah"></iframe>
+                // <iframe src="https://www.youtube.com/embed/jYhpTcaoSi0?autoplay=1" allow="autoplay" allowFullScreen title="Makkah"></iframe>
+                <iframe src="https://www.youtube.com/embed/8JNZXVF1hZc?autoplay=1"
+  title="Makkah Live"
+  className="youtube-frame"
+  referrerPolicy="strict-origin-when-cross-origin"
+  allow="autoplay; encrypted-media; picture-in-picture; fullscreen"
+  allowFullScreen></iframe>
               ) : (
                 <div className="video-placeholder" onClick={() => handlePlayback("makkah")}>
                   <div className="play-icon">▶</div>
