@@ -3,7 +3,7 @@ import "./App.css";
 
 export default function App() {
   const [activeVideo, setActiveVideo] = useState(null);
-  const audioRefs = { saudi: useRef(null), egypt: useRef(null) };
+  const audioRefs = { saudi: useRef(null), egypt: useRef(null), majd: useRef(null),};
   const [stars, setStars] = useState([]);
 
   // توليد النجوم
@@ -59,6 +59,18 @@ export default function App() {
                 <p>إذاعة القرآن - مصر</p>
                 <audio ref={audioRefs.egypt} controls src="https://stream.radiojar.com/8s5u5tpdtwzuv" onPlay={() => handlePlayback("egypt")} />
               </div>
+
+          {/* إذاعة المجد */}
+            <div className="radio-item">
+  <p>إذاعة المجد للقرآن الكريم</p>
+  <audio
+    ref={audioRefs.majd}
+    controls
+    preload="none"
+    src="http://r1.tarat.com:8196/stream?type=http&nocache=384"
+    onPlay={() => handlePlayback("majd")}
+  />
+</div>
             </div>
           </section>
 
@@ -68,12 +80,12 @@ export default function App() {
             <div className="video-wrapper">
               {activeVideo === "makkah" ? (
                 // <iframe src="https://www.youtube.com/embed/jYhpTcaoSi0?autoplay=1" allow="autoplay" allowFullScreen title="Makkah"></iframe>
-                <iframe src="https://www.youtube.com/embed/8JNZXVF1hZc?autoplay=1"
-  title="Makkah Live"
-  className="youtube-frame"
-  referrerPolicy="strict-origin-when-cross-origin"
-  allow="autoplay; encrypted-media; picture-in-picture; fullscreen"
-  allowFullScreen></iframe>
+                <iframe src="https://www.youtube.com/embed/IsJTAdC3-Jw?autoplay=1"
+                 title="Makkah Live"
+                 className="youtube-frame"
+                 referrerPolicy="strict-origin-when-cross-origin"
+                 allow="autoplay; encrypted-media; picture-in-picture; fullscreen"
+                 allowFullScreen></iframe>
               ) : (
                 <div className="video-placeholder" onClick={() => handlePlayback("makkah")}>
                   <div className="play-icon">▶</div>
