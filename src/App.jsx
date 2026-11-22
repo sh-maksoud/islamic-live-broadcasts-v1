@@ -80,12 +80,12 @@ export default function App() {
             <div className="video-wrapper">
               {activeVideo === "makkah" ? (
                 // <iframe src="https://www.youtube.com/embed/jYhpTcaoSi0?autoplay=1" allow="autoplay" allowFullScreen title="Makkah"></iframe>
-                <iframe src="https://www.youtube.com/embed/IsJTAdC3-Jw?autoplay=1"
-                 title="Makkah Live"
-                 className="youtube-frame"
-                 referrerPolicy="strict-origin-when-cross-origin"
-                 allow="autoplay; encrypted-media; picture-in-picture; fullscreen"
-                 allowFullScreen></iframe>
+                <iframe
+  src="https://www.youtube.com/embed/IsJTAdC3-Jw?autoplay=1&playsinline=1"
+  title="Makkah Live"
+  className="youtube-frame"
+  allow="autoplay; encrypted-media; picture-in-picture; fullscreen"
+  allowFullScreen></iframe>
               ) : (
                 <div className="video-placeholder" onClick={() => handlePlayback("makkah")}>
                   <div className="play-icon">▶</div>
@@ -100,7 +100,12 @@ export default function App() {
             <h2><span>🕌 المسجد النبوي</span> <small>DIRECT</small></h2>
             <div className="video-wrapper">
               {activeVideo === "madinah" ? (
-                <iframe src="https://www.youtube.com/embed/BtMUUgApnPs?autoplay=1" allow="autoplay" allowFullScreen title="Madinah"></iframe>
+                <iframe
+  src="https://www.youtube.com/embed/BtMUUgApnPs?autoplay=1&playsinline=1"
+  title="Madinah Live"
+  className="youtube-frame"
+  allow="autoplay; encrypted-media; picture-in-picture; fullscreen"
+  allowFullScreen></iframe>
               ) : (
                 <div className="video-placeholder" onClick={() => handlePlayback("madinah")}>
                   <div className="play-icon">▶</div>
