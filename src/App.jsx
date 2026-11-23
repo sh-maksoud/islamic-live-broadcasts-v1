@@ -101,11 +101,11 @@ export default function App() {
             <div className="video-wrapper">
               {activeVideo === "madinah" ? (
                 <iframe
-  src="https://www.youtube.com/embed/BtMUUgApnPs?autoplay=1&playsinline=1"
-  title="Madinah Live"
-  className="youtube-frame"
-  allow="autoplay; encrypted-media; picture-in-picture; fullscreen"
-  allowFullScreen></iframe>
+                 src="https://www.youtube.com/embed/330mzXv9-OY"
+                 title="Madinah Live"
+                 className="youtube-frame"
+                 allow="autoplay; encrypted-media; picture-in-picture; fullscreen"
+                 allowFullScreen></iframe>
               ) : (
                 <div className="video-placeholder" onClick={() => handlePlayback("madinah")}>
                   <div className="play-icon">▶</div>
