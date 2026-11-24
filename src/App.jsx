@@ -101,7 +101,8 @@ export default function App() {
             <div className="video-wrapper">
               {activeVideo === "madinah" ? (
                 <iframe
-                 src="https://www.youtube.com/embed/330mzXv9-OY"
+                //  src="https://www.youtube.com/embed/330mzXnpmv9-OY"
+                src="https://www.youtube.com/embed/3iQQcFMVSZ0?autoplay=1&playsinline=1"
                  title="Madinah Live"
                  className="youtube-frame"
                  allow="autoplay; encrypted-media; picture-in-picture; fullscreen"
