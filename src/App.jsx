@@ -96,7 +96,7 @@ export default function App() {
           </section>
 
           {/* المسجد النبوي */}
-          <section className="card">
+          {/* <section className="card">
             <h2><span>🕌 المسجد النبوي</span> <small>DIRECT</small></h2>
             <div className="video-wrapper">
               {activeVideo === "madinah" ? (
@@ -114,7 +114,44 @@ export default function App() {
                 </div>
               )}
             </div>
-          </section>
+          </section> */}
+
+
+{/* المسجد النبوي */}
+<section className="card">
+  <h2>
+    <span>🕌 المسجد النبوي</span>
+    <small>بث مباشر</small>
+  </h2>
+
+  <div className="video-wrapper">
+    {activeVideo === "madinah" ? (
+      <video
+        controls
+        autoPlay
+        playsInline
+        preload="auto"
+        className="youtube-frame"
+        src="https://cdn-globecast.akamaized.net/live/eds/saudi_sunnah/hls_roku/index.m3u8"
+        style={{
+          width: "100%",
+          height: "100%",
+          background: "#000",
+          objectFit: "contain"
+        }}
+      />
+    ) : (
+      <div
+        className="video-placeholder"
+        onClick={() => handlePlayback("madinah")}
+      >
+        <div className="play-icon">▶</div>
+        <span>تشغيل البث المباشر</span>
+      </div>
+    )}
+  </div>
+</section>
+
         </div>
 
         <footer>
